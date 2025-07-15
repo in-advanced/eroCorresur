@@ -31,10 +31,10 @@ body {
     padding: 20px;
 }
 
-/* ===== HEADER CON BANNER RESPONSIVO ===== */
+/* ===== HEADER INTEGRADO CON BANNER ===== */
 .corresur-header {
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--white);
+    color: var(--dark-gray);
     padding: 0;
     text-align: center;
     border-radius: 15px;
@@ -42,21 +42,23 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Container del Banner */
+/* Container del Banner - Integrado */
 .banner-container {
     width: 100%;
     position: relative;
     background: var(--primary-blue);
+    border-radius: 15px 15px 0 0;
 }
 
-/* Banner Responsivo */
+/* Banner Responsivo - Perfectamente Integrado */
 .responsive-banner {
     width: 100%;
-    height: auto;
+    height: 200px;
     display: block;
-    max-height: 400px;
     object-fit: cover;
     object-position: center;
     border-radius: 15px 15px 0 0;
@@ -64,33 +66,40 @@ body {
     will-change: transform;
 }
 
-/* Efecto hover para interactividad */
+/* Efecto hover sutil */
 .banner-container:hover .responsive-banner {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
-/* Contenido del Header */
+/* Contenido del Header - Integrado sin separación */
 .header-content {
-    padding: 40px 20px;
+    padding: 30px 20px 40px 20px;
     background: var(--primary-blue);
     position: relative;
+    color: var(--white);
+    border-radius: 0 0 15px 15px;
+    /* Sin separación visual con el banner */
+    margin-top: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
 }
 
 .main-title {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     font-weight: 300;
-    margin: 20px 0;
+    margin: 0 0 15px 0;
     text-align: center;
     color: var(--white);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.2;
 }
 
 .project-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     opacity: 0.9;
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    line-height: 1.4;
 }
 
 .badges-container {
@@ -98,7 +107,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .badge {
@@ -106,7 +115,7 @@ body {
     color: var(--white);
     padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     display: inline-block;
     animation: pulse 2s infinite;
@@ -493,29 +502,171 @@ body {
     z-index: 1001;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN INTEGRADO ===== */
 
-/* Tablet (768px y menos) */
-@media (max-width: 768px) {
+/* Desktop grande (1400px y más) */
+@media (min-width: 1400px) {
     .responsive-banner {
-        max-height: 250px;
+        height: 280px;
     }
     
     .main-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
     
     .project-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     
     .header-content {
-        padding: 30px 15px;
+        padding: 45px 30px 55px 30px;
+    }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+    .responsive-banner {
+        height: 250px;
+    }
+    
+    .main-title {
+        font-size: 3.2rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .header-content {
+        padding: 40px 25px 50px 25px;
+    }
+}
+
+/* Laptop grande (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .responsive-banner {
+        height: 220px;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .header-content {
+        padding: 35px 20px 45px 20px;
+    }
+}
+
+/* Tablet grande (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .responsive-banner {
+        height: 190px;
+    }
+    
+    .main-title {
+        font-size: 2.6rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.15rem;
+    }
+    
+    .header-content {
+        padding: 30px 20px 40px 20px;
     }
     
     .badge {
         font-size: 0.8rem;
         padding: 6px 12px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .section-content {
+        padding: 25px;
+    }
+}
+
+/* Tablet (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .responsive-banner {
+        height: 160px;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .project-subtitle {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .header-content {
+        padding: 25px 15px 35px 15px;
+    }
+    
+    .badges-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .badge {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .nav-menu {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-menu a {
+        display: inline-block;
+        margin: 5px;
+    }
+    
+    .overview-grid,
+    .goals-grid,
+    .specs-grid,
+    .use-case-grid,
+    .guarantee-grid,
+    .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Móvil grande (480px - 575px) */
+@media (max-width: 575px) and (min-width: 480px) {
+    .responsive-banner {
+        height: 140px;
+    }
+    
+    .main-title {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .project-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+    
+    .header-content {
+        padding: 20px 15px 30px 15px;
     }
     
     .container {
@@ -525,66 +676,40 @@ body {
     .section-content {
         padding: 20px;
     }
-
-    .nav-menu {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 20px 0;
-    }
-
-    .nav-menu a {
-        display: inline-block;
-        margin: 5px;
-    }
 }
 
-/* Móvil (480px y menos) */
-@media (max-width: 480px) {
+/* Móvil (375px - 479px) */
+@media (max-width: 479px) and (min-width: 375px) {
     .responsive-banner {
-        max-height: 180px;
-        border-radius: 15px 15px 0 0;
+        height: 120px;
     }
     
     .main-title {
-        font-size: 1.8rem;
-        margin: 15px 0;
+        font-size: 1.7rem;
+        margin-bottom: 8px;
     }
     
     .project-subtitle {
-        font-size: 1rem;
-        line-height: 1.4;
+        font-size: 0.85rem;
+        line-height: 1.2;
+        margin-bottom: 15px;
     }
     
     .header-content {
-        padding: 20px 10px;
-    }
-    
-    .badges-container {
-        flex-direction: column;
-        align-items: center;
+        padding: 18px 12px 25px 12px;
     }
     
     .badge {
-        font-size: 0.75rem;
-        padding: 5px 10px;
-        margin: 2px 0;
-    }
-
-    .overview-grid,
-    .goals-grid,
-    .specs-grid,
-    .use-case-grid,
-    .guarantee-grid,
-    .cta-grid {
-        grid-template-columns: 1fr;
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        margin: 2px;
     }
 }
 
-/* Pantallas muy pequeñas (320px y menos) */
-@media (max-width: 320px) {
+/* Móvil pequeño (320px - 374px) */
+@media (max-width: 374px) and (min-width: 320px) {
     .responsive-banner {
-        max-height: 120px;
+        height: 100px;
     }
     
     .main-title {
@@ -592,49 +717,59 @@ body {
     }
     
     .project-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .header-content {
-        padding: 15px 8px;
+        padding: 15px 10px 20px 10px;
     }
 }
 
-/* Pantallas grandes (1200px y más) */
-@media (min-width: 1200px) {
+/* Pantallas muy pequeñas (menos de 320px) */
+@media (max-width: 319px) {
     .responsive-banner {
-        max-height: 500px;
+        height: 80px;
     }
     
     .main-title {
-        font-size: 3.8rem;
+        font-size: 1.3rem;
     }
     
     .project-subtitle {
-        font-size: 1.6rem;
+        font-size: 0.75rem;
+    }
+    
+    .header-content {
+        padding: 12px 8px 18px 8px;
+    }
+    
+    .container {
+        padding: 5px;
     }
 }
 
-/* ===== ANIMACIONES ADICIONALES ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* ===== OPTIMIZACIONES ADICIONALES ===== */
+
+/* Mejora la carga y rendimiento */
+.responsive-banner {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
-/* ===== OPTIMIZACIONES ===== */
-.overview-card,
-.goal-card,
-.spec-card,
-.use-case-card,
-.guarantee-item,
-.cta-item,
-.milestone-item {
+/* Asegura integración perfecta */
+.header-content {
+    z-index: 2;
+    position: relative;
+}
+
+.banner-container {
+    z-index: 1;
+    position: relative;
+}
+
+/* Suaviza todas las transiciones */
+.corresur-header * {
     transition: all 0.3s ease;
 }
 
@@ -657,5 +792,31 @@ body {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== FALLBACKS PARA NAVEGADORES ANTIGUOS ===== */
+@supports not (object-fit: cover) {
+    .responsive-banner {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* ===== MEJORAS FINALES DE INTEGRACIÓN ===== */
+@media (hover: hover) {
+    .banner-container:hover .responsive-banner {
+        transform: scale(1.01);
+    }
+    
+    .overview-card:hover,
+    .goal-card:hover,
+    .spec-card:hover,
+    .use-case-card:hover,
+    .guarantee-item:hover,
+    .cta-item:hover,
+    .milestone-item:hover {
+        box-shadow: 0 12px 35px rgba(0,0,0,0.15);
     }
 }
